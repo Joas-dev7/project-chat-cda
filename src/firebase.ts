@@ -3,13 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDkWyp2rSpm3KZ4pWZcNaoqW5WcWRiZXzc",
-  authDomain: "visiondesigne-ed6cd.firebaseapp.com",
-  projectId: "visiondesigne-ed6cd",
-  storageBucket: "visiondesigne-ed6cd.firebasestorage.app",
-  messagingSenderId: "303685066864",
-  appId: "1:303685066864:web:2eb69cf06b9c9615e494b5",
-  measurementId: "G-N0ZVKSBCT9"
+  apiKey: "AIzaSyCWLkec6nyly81UPgDHxY-PvEQEnsHOXy8",
+  authDomain: "chat-6a887.firebaseapp.com",
+  projectId: "chat-6a887",
+  storageBucket: "chat-6a887.firebasestorage.app",
+  messagingSenderId: "950422571405",
+  appId: "1:950422571405:web:eda2f84276a7e7edbbd5c4",
 };
 
 const app = initializeApp(firebaseConfig);

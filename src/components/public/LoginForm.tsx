@@ -1,23 +1,17 @@
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
+import AuthClass from "../../common/AuthClass";
 
-interface LoginFormProps {
-  email: string;
-  password: string;
-  onEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onPasswordChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSubmit: (e: React.FormEvent) => void;
-  onGoogleSignIn: () => void;
-}
+interface LoginFormProps {}
 
-export const LoginForm: React.FC<LoginFormProps> = ({
-  email,
-  password,
-  onEmailChange,
-  onPasswordChange,
-  onSubmit,
-  onGoogleSignIn,
-}) => {
+export const LoginForm: React.FC = () => {
+  const auth = new AuthClass(); //creation de l instance de class
+  //connexion avec le bouton google
+  const onGoogleSignIn = () => {
+    console.log("connexion avec google");
+    auth.connexionGoogle();
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
@@ -25,26 +19,21 @@ export const LoginForm: React.FC<LoginFormProps> = ({
           <MessageCircle className="w-12 h-12 text-blue-500" />
           <h1 className="text-2xl font-bold ml-2">Chat App</h1>
         </div>
-        <form onSubmit={onSubmit} className="space-y-4">
+        <form className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
-              type="email"
-              value={email}
-              onChange={onEmailChange}
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Mot de passe</label>
-            <input
-              type="password"
-              value={password}
-              onChange={onPasswordChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              required
-            />
+            <label className="block text-sm font-medium text-gray-700">
+              Mot de passe
+            </label>
+            <input type="password" required />
           </div>
           <div className="flex space-x-4">
             <button
@@ -68,7 +57,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({
               <div className="w-full border-t border-gray-300"></div>
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">Ou continuer avec</span>
+              <span className="px-2 bg-white text-gray-500">
+                Ou continuer avec
+              </span>
             </div>
           </div>
 
